@@ -3,10 +3,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script type="text/javascript">
+        const SERVER_BASE_URL = "http://localhost:3000";
+
         const URL = "https://teachablemachine.withgoogle.com/models/szxI-Pu9p/";
         const image = new Image();
+
+        // Load the model and append the screenshot to be classified to the page
         async function init() {
-            image.src = "http://localhost:3000";
+            image.src = SERVER_BASE_URL;
             image.crossOrigin = "anonymous";
             document.querySelector("body").appendChild(image);
             const modelURL = URL + "model.json";
@@ -15,9 +19,8 @@
             model = await tmImage.load(modelURL, metadataURL);
         }
 
-        // run the webcam image through the image model
+        // Run the model on the image and return the predictions
         async function predict() {
-            // predict can take in an image, video or canvas html element
             const prediction = await model.predict(image);
             prediction.forEach((p) => {
                 console.log(p.className + ": " + p.probability.toFixed(2));
@@ -25,6 +28,7 @@
             return prediction;
         }
 
+        // main
         (async () => {
             await init();
             const results = await predict();
@@ -34,7 +38,7 @@
                     p1 = p.probability.toFixed(2);
                 } else p2 = p.probability.toFixed(2);
             });
-            fetch(`http://localhost:3000/send?p1=${p1}&p2=${p2}`);
+            fetch(`${SERVER_BASE_URL}/send?p1=${p1}&p2=${p2}`); // Send the results back to the server
         })();
     </script>
 </html>
