@@ -1,41 +1,36 @@
 {
-    "name": "sneak-into-basket-detection",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "tsc && node dist/src/index.js",
-        "clean": "rimraf dist/"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xrenegade100/sneak-into-basket-detection.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/xrenegade100/sneak-into-basket-detection/issues"
-    },
-    "homepage": "https://github.com/xrenegade100/sneak-into-basket-detection#readme",
-    "dependencies": {
-        "@sashido/teachablemachine-node": "github:rgwebcode/teachablemachine-node",
-        "@teachablemachine/image": "^0.8.5",
-        "@tensorflow/tfjs": "^1.3.1",
-        "@tensorflow/tfjs-node": "^3.19.0",
-        "axios": "^0.27.2",
-        "cheerio": "^1.0.0-rc.12",
-        "cors": "^2.8.5",
-        "cypress": "^10.3.1",
-        "express": "^4.18.1",
-        "pureimage": "^0.3.14",
-        "typescript": "^4.7.4"
-    },
-    "devDependencies": {
-        "@types/cors": "^2.8.12",
-        "@types/express": "^4.17.13",
-        "cheerio": "=1.0.0-rc.12",
-        "rimraf": "^3.0.2"
-    }
+  "name": "sneak-into-basket-detection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/src/index.js",
+    "clean": "rimraf dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xrenegade100/sneak-into-basket-detection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xrenegade100/sneak-into-basket-detection/issues"
+  },
+  "homepage": "https://github.com/xrenegade100/sneak-into-basket-detection#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cypress": "^10.3.1",
+    "express": "^4.18.1",
+    "puppeteer": "^15.5.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/puppeteer": "^5.4.6",
+    "cypress-browser-extension-plugin": "^0.1.0",
+    "rimraf": "^3.0.2"
+  }
 }

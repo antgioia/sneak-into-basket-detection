@@ -1,20 +1,27 @@
-import axios from "axios";
-import { load } from "cheerio";
+const arrayWords = [
+  "AGGIUNGI AL CARRELLO",
+  "AGGIUNGI AL BASKET",
+  "AGGIUNGI",
+  "ADD TO CART",
+];
 
 it("Sneak Into Basket", () => {
-    cy.viewport(1280, 720).visit(
-        "https://www.valentinienoteca.it/2137-bulldog-cl100.html"
-    );
-    cy.get("button")
-        .contains("Aggiungi al carrello")
-        .click({ force: true })
-        .wait(2000)
-        .visit("https://www.valentinienoteca.it/carrello?action=show");
-    cy.viewport(1280, 720)
-        .screenshot("screenshot")
-        .then((s) => {
-            console.log(s);
+  cy.visit("https://shop.pastagarofalo.it/it/mix-farine-7kg/");
+  cy.wait(2000);
+  cy.get("button")
+    .then((e) => {
+      Cypress.$(e).each((i, element) => {
+        arrayWords.forEach((word) => {
+          if (Cypress.$(element).text().toUpperCase().includes(word)) {
+            cy.wrap(element).click({ force: true });
+          }
         });
+      });
+    })
+    .wait(1000);
+  cy.visit("https://shop.pastagarofalo.it/it/cart/")
+    .wait(2000)
+    .screenshot("screenshot", { capture: "viewport" });
 });
 
 /**
