@@ -4,6 +4,8 @@ const arrayWords = [
   "AGGIUNGI",
   "ADD TO CART",
   "ADD TO MY CART",
+  "ADD TO BASKET",
+  "ADD TO MY BASKET",
 ];
 
 const PRODUCT_URL = "https://shop.pastagarofalo.it/it/mix-farine-7kg/";
