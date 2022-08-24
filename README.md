@@ -30,7 +30,8 @@
 The term dark pattern was originally coined by Harry Brignull, London designer, in 2010. He defined it as:
 
 > a user interface that has been carefully crafted to trick users into doing things, such as buying insurance with their purchase or signing up for recurring bills
-> When we use the Internet, there are many times we encounter instances of dark pattern. Our actions are influenced by the elements in the interface of a web page.
+
+When we use the Internet, there are many times we encounter instances of dark pattern. Our actions are influenced by the elements in the interface of a web page.
 
 This algorithm is used to identify instances of the dark pattern _sneak into basket_ within web pages.
 
