@@ -6,14 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/src/index.js",
-    "clean": "rimraf dist/"
+    "clean": "rimraf dist/",
+    "build": "tsc",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xrenegade100/sneak-into-basket-detection.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Domenico Antonio Gioia <antgioia10@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/xrenegade100/sneak-into-basket-detection/issues"
